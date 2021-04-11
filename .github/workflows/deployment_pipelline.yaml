@@ -25,6 +25,13 @@ jobs:
         - name: lint
           run: npm run lint
         - name: test
+        - name: Create env file
+          run: |
+            touch .env            
+            echo MONGODB_URI=${{ secrets.MONGODB_URI }} >> .env
+            echo TEST_MONGODB_URI=${{ secrets.TEST_MONGODB_URI }} >> .env
+            cat .env
+        - name: test backend
           run: npm run test
         - name: build
           run: npm run build
