@@ -6,11 +6,16 @@ on:
       - main
   pull_request:
     branches: [main]
-    types: [opened, synchronize]
+    types: [opened, synchronize]  
 
 jobs:
   simple_deployment_pipeline:
     runs-on: ubuntu-18.04
+    env:
+      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      MONGODB_URI: ${{ secrets.MONGODB_URI }}
+      SECRET: ${{ secrets.SECRET }}
+      TEST_MONGODB_URI: ${{ secrets.TEST_MONGODB_URI }}
     steps:
         - name: git checkout
           uses: actions/checkout@v2
@@ -24,13 +29,8 @@ jobs:
           run: npm install
         - name: lint
           run: npm run lint        
-        - name: Create env file
-          run: |
-            touch .env            
-            echo MONGODB_URI=${{ secrets.MONGODB_URI }} >> .env
-            echo TEST_MONGODB_URI=${{ secrets.TEST_MONGODB_URI }} >> .env
-            cat .env
         - name: test backend
           run: npm run test
         - name: build
           run: npm run build
+             
