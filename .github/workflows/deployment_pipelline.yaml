@@ -23,8 +23,7 @@ jobs:
         - name: npm install
           run: npm install
         - name: lint
-          run: npm run lint
-        - name: test
+          run: npm run lint        
         - name: Create env file
           run: |
             touch .env            
