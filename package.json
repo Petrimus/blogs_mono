@@ -6,11 +6,14 @@
   "scripts": {
     "start": "webpack serve --mode=development",
     "dev": "cross-env NODE_ENV=development nodemon index.js",
-    "start-prod": "cross-env NODE_ENV=production node index.js",
-    "lint": "eslint .",
-    "test": "NODE_ENV=test jest --verbose --runInBand",
+    "start:production": "cross-env NODE_ENV=production node index.js",
+    "lint": "eslint './**/*.{js,jsx}'",
+    "test:verbose": "NODE_ENV=test jest --verbose --runInBand",
+    "test": "NODE_ENV=test jest --runInBand",
     "cypress:open": "cypress open",
-    "start:test": "NODE_ENV=test nodemon index.js"
+    "test:e2e": "cypress run",
+    "start:test": "NODE_ENV=test nodemon index.js",
+    "build": "webpack --mode production"
   },
   "keywords": [
     "fullstack-open"

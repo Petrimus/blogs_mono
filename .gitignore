@@ -5,5 +5,5 @@
 dist/
 node_modules/
 cypress/videos
-heroku
+heroku.txt
 kommitit
