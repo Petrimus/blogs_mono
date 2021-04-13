@@ -91,7 +91,19 @@ describe('Blog app', function () {
       cy.contains('likes 1')
     })
 
-    it('they are ordered by number of likes', function () {
+    it('The creator can delete a blog', function () {
+
+      cy.contains('test3').click()
+      cy.contains('remove').click()
+      cy.get('#blogsButton').click()
+      cy.should('not.contain', 'test3')
+
+    })
+  })
+})
+
+/*
+ it('they are ordered by number of likes', function () {
       cy.contains('test1').click()
       cy.get('.likeBtn').click()
 
@@ -137,14 +149,4 @@ describe('Blog app', function () {
         cy.wrap(blogs[2]).click().get('.likes').contains('likes 2')
       })
     })
-
-    it('The creator can delete a blog', function () {
-
-      cy.contains('test3').click()
-      cy.contains('remove').click()
-      cy.get('#blogsButton').click()
-      cy.should('not.contain', 'test3')
-
-    })
-  })
-})
+    */
