@@ -48,11 +48,11 @@ blogsRouter.post('/', async (request, response, next) => {
       author: body.author,
       url: body.url,
       likes: body.likes || 0,
-      user: user.id,
+      user: user,
     })
 
     const savedBlog = await blogModel.save()
-    user.blogs = user.blogs.concat(savedBlog.id)
+    user.blogs = user.blogs.concat(savedBlog._id)
     await user.save()
     const savedAndFormattedBlog = savedBlog.toJSON()
     response.status(201).json(savedAndFormattedBlog)

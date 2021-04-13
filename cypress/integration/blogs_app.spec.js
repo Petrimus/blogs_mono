@@ -59,7 +59,7 @@ describe('Blog app', function () {
     })
   })
 
-  describe('When several blogs creaded by many people exist', function () {
+  describe('many blogs creaded by many people exist', function () {
     beforeEach(function () {
       cy.login({ username: 'palmupe', password: 'salainen' })
       cy.createBlog({
