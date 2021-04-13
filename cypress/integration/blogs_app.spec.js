@@ -91,6 +91,7 @@ describe('Blog app', function () {
       cy.contains('likes 1')
     })
 
+
     it('The creator can delete a blog', function () {
 
       cy.contains('test3').click()
