@@ -72,7 +72,7 @@ describe('Blog app', function () {
         title: 'test2',
         url: 'http://example.com./test2',
       })
-      cy.get('#logoutButton').click()
+
       cy.login({ username: 'testeri', password: 'salainen' })
       cy.createBlog({
         author: 'Jane Doe',
