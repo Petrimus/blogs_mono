@@ -1,5 +1,5 @@
 {
-  "name": "phonebook_mono",
+  "name": "blogs_mono",
   "version": "1.0.0",
   "description": "List of interesting blogs, Full stack course 2021",
   "main": "/index.js",
@@ -8,8 +8,8 @@
     "dev": "cross-env NODE_ENV=development nodemon index.js",
     "start:production": "cross-env NODE_ENV=production node index.js",
     "lint": "eslint './**/*.{js,jsx}'",
-    "test:verbose": "NODE_ENV=test jest --verbose --runInBand",
-    "test": "NODE_ENV=test jest --runInBand",
+    "test:verbose": "cross-env NODE_ENV=test jest --verbose --runInBand",
+    "test": "cross-env NODE_ENV=test jest --runInBand",
     "cypress:open": "cypress open",
     "test:e2e": "cypress run",
     "start:test": "NODE_ENV=test nodemon index.js",
@@ -37,7 +37,8 @@
     "react-router-dom": "^5.2.0",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
-    "styled-components": "^5.2.3"
+    "styled-components": "^5.2.3",
+    "uglify-js": "^3.13.4"
   },
   "devDependencies": {
     "@babel/core": "^7.13.13",

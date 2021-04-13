@@ -1,12 +1,12 @@
 describe('Blog app', function () {
   beforeEach(function () {
-    cy.request('POST', 'http://localhost:3003/api/testing/reset')
-    cy.request('POST', 'http://localhost:3003/api/users', {
+    cy.request('POST', 'http://localhost:3000/api/testing/reset')
+    cy.request('POST', 'http://localhost:3000/api/users', {
       username: 'palmupe',
       name: 'Petri Palmu',
       password: 'salainen',
     })
-    cy.request('POST', 'http://localhost:3003/api/users', {
+    cy.request('POST', 'http://localhost:3000/api/users', {
       username: 'testeri',
       name: 'Test Tester',
       password: 'salainen',

@@ -19,10 +19,13 @@ mongoose.connect(config.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology
   })
 
 app.use(express.json())
-app.use(express.static('dist'))
 app.use(morgan('tiny'))
 app.use(middleware.tokenExtractor)
-app.use(express.static('build'))
+
+if (process.env.NODE_ENV === 'test' || process.env.NODE_ENV === 'production') {
+  app.use(express.static('dist'))
+}
+
 
 app.use('/api/blogs', blogsRouter)
 app.use('/api/users', usersRouter)
