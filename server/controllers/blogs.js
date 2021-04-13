@@ -61,7 +61,6 @@ blogsRouter.post('/', async (request, response, next) => {
   }
 })
 
-
 blogsRouter.delete('/:id', async (request, response, next) => {
   try {
     const decodedToken = jwt.verify(request.token, process.env.SECRET)
@@ -98,7 +97,10 @@ blogsRouter.put('/:id', async (request, response, next) => {
       request.params.id,
       blogToChange,
       { new: true }
-    ).populate('comments', { content: 1 })
+    )
+      .populate('comments', { content: 1 })
+      .populate('user', { username: 1, name: 1 })
+
     response.json(savedUpdatedBlog.toJSON())
   } catch (exception) {
     next(exception)
