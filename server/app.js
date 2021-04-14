@@ -10,7 +10,13 @@ const mongoose = require('mongoose')
 const logger = require('./util/logger')
 
 logger.info('connecting to ', config.MONGODB_URI)
-mongoose.connect(config.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true })
+mongoose
+  .connect(config.MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+    useCreateIndex: true,
+  })
   .then(() => {
     logger.info('connected to MongoDB')
   })
@@ -26,14 +32,15 @@ if (process.env.NODE_ENV === 'test' || process.env.NODE_ENV === 'production') {
   app.use(express.static('dist'))
 }
 
-
 app.use('/api/blogs', blogsRouter)
 app.use('/api/users', usersRouter)
 app.use('/api/login', loginRouter)
 
-app.get('/health', (req, res) => {
-  res.send('ok')
-})
+if (process.env.NODE_ENV === 'production') {
+  app.get('/health', (req, res) => {
+    res.send('ok')
+  })
+}
 
 if (process.env.NODE_ENV === 'test') {
   const testingRouter = require('./controllers/testing')
