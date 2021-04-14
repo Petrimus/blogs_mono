@@ -1,13 +1,11 @@
-name: Periodic health check
+name: Healthcheck
 
 on:
-  schedule:
-    
-    - cron: '* 21,22,23 * * *'
-
+  schedule:    
+    - cron: '* 8,9 * * *'
 jobs:
   periodic_health_check:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     steps:
       - name: Check app in prod
         uses: jtalk/url-health-check-action@v1.5
