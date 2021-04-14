@@ -300,7 +300,8 @@ describe('when there is initially one user at db', () => {
       .expect(400)
       .expect('Content-Type', /application\/json/)
 
-    expect(result.body.error).toContain('username must be unique')
+    expect(result.body.error).toContain(
+      'ser validation failed: username: Error, expected `username` to be unique. Value: `root`')
 
     const usersAtEnd = await helper.usersInDb()
     expect(usersAtEnd.length).toBe(usersAtStart.length)
@@ -322,7 +323,7 @@ describe('when there is initially one user at db', () => {
       .expect('Content-Type', /application\/json/)
 
     expect(result.body.error).toContain(
-      'username and password must contain atleast 3 characters'
+      'User validation failed: username: Path `username` (`ro`) is shorter than the minimum allowed length (3).'
     )
 
     const usersAtEnd = await helper.usersInDb()

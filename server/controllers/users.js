@@ -6,6 +6,7 @@ usersRouter.post('/', async (request, response, next) => {
 
   try {
     const body = request.body
+    /*
     const isUnique = await UserModel.find({ username: body.username })
 
     if (isUnique.length > 0) {
@@ -17,7 +18,7 @@ usersRouter.post('/', async (request, response, next) => {
         error: 'username and password must contain atleast 3 characters'
       })
     }
-
+*/
     const saltRounds = 10
     const passwordHash = await bcrypt.hash(body.password, saltRounds)
 
