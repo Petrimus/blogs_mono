@@ -1,8 +1,6 @@
 .env
 */node_modules
 /build
-/dist
-dist/
 node_modules/
 cypress/videos
 heroku.txt
