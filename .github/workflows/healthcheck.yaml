@@ -4,7 +4,7 @@ on:
   schedule:    
     - cron: '* 8,9 * * *'
 jobs:
-  periodic_health_check:
+  timed_health_check:
     runs-on: ubuntu-18.04
     steps:
       - name: Check app in prod
