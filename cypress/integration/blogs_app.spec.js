@@ -58,6 +58,8 @@ describe('Blog app', function () {
       cy.contains('Gleb Bahmutov')
     })
   })
+})
+/*
 
   describe('many blogs creaded by many people exist', function () {
     beforeEach(function () {
@@ -103,7 +105,7 @@ describe('Blog app', function () {
   })
 })
 
-/*
+
  it('they are ordered by number of likes', function () {
       cy.contains('test1').click()
       cy.get('.likeBtn').click()
