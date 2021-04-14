@@ -4,9 +4,9 @@
   "description": "List of interesting blogs, Full stack course 2021",
   "main": "/index.js",
   "scripts": {
-    "start": "webpack serve --mode=development",
+    "start:dev": "webpack serve --mode=development",
     "dev": "cross-env NODE_ENV=development nodemon index.js",
-    "start:production": "cross-env NODE_ENV=production node index.js",
+    "start": "NODE_ENV=production node index.js",
     "lint": "eslint './**/*.{js,jsx}'",
     "test:verbose": "cross-env NODE_ENV=test jest --verbose --runInBand",
     "test": "cross-env NODE_ENV=test jest --runInBand",
