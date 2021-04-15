@@ -48,7 +48,8 @@ jobs:
             heroku_email: "petrimus76@gmail.com"
             healthcheck: "https://blogsmono.herokuapp.com/health"
             checkstring: "ok"
-            rollbackonhealthcheckfailed: true       
+            rollbackonhealthcheckfailed: true  
+        - uses: actions/checkout@v2     
         - name: Bump version and push tag
           if: ${{ github.event_name == 'push' && !contains(join(toJson(github.event.commits.*.message)), '#skip') }}          
           uses: anothrNick/github-tag-action@1.35.0
