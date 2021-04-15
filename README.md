@@ -9,9 +9,18 @@ App is running on Heroku at [blogsmono](https://blogsmono.herokuapp.com)
 ```npm run dev``` runs node backend server in dev-mode
 
 ```npm start``` runs node backend in production mode and serves front from static build
+
 ```npm run lint``` runs eslint, which runs against both front- and backend
+
 ```test:verbose``` runs tests for backend
+
 ```npm run cypress:open``` runs cypress in visual mode
+
 ```npm run test:e2e``` runs cypress without visuals
+
 ```npm run start:test``` runs node backend in test-mode
+
 ```npm run build``` builds static content
+
+## source
+This code is based on previous Open Fullstack exercises and https://github.com/UniversityOfHelsinkiCS/toskaboiler
