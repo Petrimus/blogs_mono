@@ -4,7 +4,7 @@ App is running on Heroku at [blogsmono](https://blogsmono.herokuapp.com)
 
 ## commands
 
-'''npm run start:dev''' run webpack dev-server
+```npm run start:dev``` run webpack dev-server
 '''npm run dev''' runs node backend server in dev-mode
 '''npm start''' runs node backend in production mode and serves front from static build
 ''' npm run lint''' runs eslint, which runs against both front- and backend
