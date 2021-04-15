@@ -48,15 +48,13 @@ jobs:
             heroku_email: "petrimus76@gmail.com"
             healthcheck: "https://blogsmono.herokuapp.com/health"
             checkstring: "ok"
-            rollbackonhealthcheckfailed: true
-        - name: git checkout
-          uses: actions/checkout@v2
+            rollbackonhealthcheckfailed: true       
         - name: Bump version and push tag
-          if: ${{ github.event_name == 'push' && !contains(join(toJson(github.event.commits.*.message)), '#skip')}}          
+          if: ${{ github.event_name == 'push' && !!contains(join(github.event.commits.*.message), '#skip') }}          
           uses: anothrNick/github-tag-action@eca2b69f9e2c24be7decccd0f15fdb1ea5906598
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            INITIAL_VERSION: "1.0.1"            
+            INITIAL_VERSION: "1.0.0"            
             DEFAULT_BUMP: patch
         - name: Notification success
           if: ${{ success() && github.event_name == 'push' && !contains(join(toJson(github.event.commits.*.message)), '#skip') }}
