@@ -2,7 +2,7 @@ name: Healthcheck
 
 on:
   schedule:    
-    - cron: '15,45 15,16,17 * * *'
+    - cron: '15,45 17,18 * * *'
 jobs:
   timed_health_check:
     runs-on: ubuntu-18.04
