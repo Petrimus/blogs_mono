@@ -2,6 +2,9 @@
 Exercise 11.21 for Helsinki university course Full Stack open. This is monorepository containing both frontend and backend.
 App is running on Heroku at [blogsmono](https://blogsmono.herokuapp.com)
 
+## testing
+Application is usable also with out siging in, but it will open all features. Test user credentials are tester as username and test as password.
+
 ## commands
 
 ```npm run start:dev``` run webpack dev-server
