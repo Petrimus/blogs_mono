@@ -28,6 +28,7 @@ blogsRouter.get('/:id', async (request, response, next) => {
   }
 })
 
+
 blogsRouter.post('/', async (request, response, next) => {
   const body = request.body
 
@@ -68,6 +69,7 @@ blogsRouter.delete('/:id', async (request, response, next) => {
     if (!request.token || !decodedToken.id) {
       return response.status(401).json({ error: 'token missing or invalid' })
     }
+
 
     const blog = await BlogModel.findById(request.params.id)
 
