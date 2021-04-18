@@ -1,3 +1,5 @@
+The other repository is pokedex https://github.com/Petrimus/full-stack-open-pokedex .
+
 # Fullstack blogs mono repo
 Exercise 11.21 for Helsinki university course Full Stack open. This is monorepository containing both frontend and backend.
 App is running on Heroku at [blogsmono](https://blogsmono.herokuapp.com)
